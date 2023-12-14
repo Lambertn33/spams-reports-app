@@ -20,4 +20,4 @@ Route::get('/', function () {
 });
 
 Route::get('users/reports', UsersSpamReportsController::class);
-Route::resource('protectors/reports', ProtectorsSpamReportsController::class);
+Route::resource('protectors/reports', ProtectorsSpamReportsController::class)->only(['index', 'update']);

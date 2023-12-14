@@ -29,8 +29,8 @@ class ProtectorsSpamReportsController extends Controller
         $type = $request->type;
 
         $successMessage = $type === "resolveForm" ?
-            'Report resolved successfully' :
-            'Report marked as blocked successfully';
+            'Report resolved successfully and no longer visible to protectors' :
+            'Report marked as blocked successfully and no longer visible to users';
 
         if ($type == "stateForm") {
             SpamReport::find($id)->update([

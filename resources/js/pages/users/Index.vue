@@ -5,7 +5,7 @@
         class="block bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 p-6"
       >
         <div v-for="report in spamReports.data" :key="report.id">
-          <ReportItem :report="report"/>
+          <ReportItem :report="report" :canViewActions="false"/>
         </div>
         <div class="flex justify-end" v-if="spamReports.data.length">
           <Pagination :links="spamReports.links" />

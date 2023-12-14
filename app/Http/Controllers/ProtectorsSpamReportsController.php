@@ -61,17 +61,17 @@ class ProtectorsSpamReportsController extends Controller
             'Report resolved successfully' :
             'Report marked as blocked successfully';
 
-        if ($type == "resolveForm") {
+        if ($type == "stateForm") {
             SpamReport::find($id)->update([
                 'isBlocked' => true
             ]);
         }
-        if ($type == "stateForm") {
+        if ($type == "resolveForm") {
             SpamReport::find($id)->update([
                 'state' => 'CLOSED'
             ]);
         }
-        return redirect('/')->with('success', $successMessage);
+        return redirect('/users/reports')->with('success', $successMessage);
     }
 
     /**

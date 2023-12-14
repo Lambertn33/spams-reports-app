@@ -8,7 +8,7 @@
 
     <div class="flex items-start gap-2" v-if="canViewActions">
       <form @submit.prevent="handleChangeState">
-        <fwb-button type="submit" color="default" size="sm">Block</fwb-button>
+        <fwb-button :disabled="report.isBlocked" type="submit" color="default" size="sm">{{ report.isBlocked ? "Blocked" : "Block" }}</fwb-button>
       </form>
       <form @submit.prevent="handleResolve">
         <fwb-button type="submit" color="default" outline size="sm"

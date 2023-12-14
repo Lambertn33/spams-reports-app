@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\SpamReport;
 
 class ProtectorsSpamReportsController extends Controller
 {
@@ -11,7 +12,10 @@ class ProtectorsSpamReportsController extends Controller
      */
     public function index()
     {
-        return inertia('protectors/Index');
+        $spamReports = SpamReport::where('state', SpamReport::OPEN)->paginate(5);
+        return inertia('protectors/Index', [
+            'spamReports' => $spamReports
+        ]);
     }
 
     /**

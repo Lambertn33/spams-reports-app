@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProtectorsSpamReportsController;
+use App\Http\Controllers\UsersSpamReportsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('app');
-// });
+Route::get('/', function () {
+    return redirect('/users/reports');
+});
+
+Route::get('users/reports', UsersSpamReportsController::class);
 Route::resource('protectors/reports', ProtectorsSpamReportsController::class);

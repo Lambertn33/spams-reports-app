@@ -12,9 +12,12 @@ class ProtectorsSpamReportsController extends Controller
      */
     public function index()
     {
-        $spamReports = SpamReport::where('state', SpamReport::OPEN)->paginate(5);
+        $query = SpamReport::where('state', SpamReport::OPEN);
+        $spamReports = $query->paginate(5);
+
         return inertia('protectors/Index', [
-            'spamReports' => $spamReports
+            'spamReports' => $spamReports,
+            'spamReportsCount' => $spamReports->total(),
         ]);
     }
 

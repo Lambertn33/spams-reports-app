@@ -1,6 +1,6 @@
 <template>
     <div class="w-full md:w-4/5 gap-4 flex flex-col overflow-y-auto">
-      <span class="text-3xl font-semibold">Protectors spam reports view</span>
+      <span class="text-3xl font-semibold">Protectors spam reports view ({{ spamReportsCount }})</span>
       <div
         class="block bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 p-6"
       >
@@ -20,5 +20,6 @@
   
   defineProps({
     spamReports: Object,
+    spamReportsCount: Number
   });
   </script>

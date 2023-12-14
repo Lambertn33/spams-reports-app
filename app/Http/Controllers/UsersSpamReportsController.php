@@ -10,11 +10,14 @@ class UsersSpamReportsController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request)
+    public function __invoke()
     {
-        $spamReports = SpamReport::where('isBlocked', false)->paginate(5);
+        $query = $spamReports = SpamReport::where('isBlocked', false);
+        $spamReports = $query->paginate(5);
+        
         return inertia('users/Index', [
-            'spamReports' => $spamReports
+            'spamReports' => $spamReports,
+            'spamReportsCount' => $spamReports->total()
         ]);
     }
 }

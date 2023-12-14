@@ -1,6 +1,6 @@
 # Report spam App
 
-A simple Laravel, Vue and inertia add to help in blocking and resolving spams in a certain web app
+A simple Laravel, Vue and inertia application to help in blocking and resolving spams in a certain web app
 
 # Users
 users can view all spam reports which are not blocked by the Team protectors (isBlocked: true)

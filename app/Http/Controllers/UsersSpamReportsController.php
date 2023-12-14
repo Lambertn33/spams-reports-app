@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SpamReport;
 use Illuminate\Http\Request;
 
 class UsersSpamReportsController extends Controller
@@ -11,6 +12,9 @@ class UsersSpamReportsController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return inertia('users/Index');
+        $spamReports = SpamReport::where('isBlocked', false)->paginate(5);
+        return inertia('users/Index', [
+            'spamReports' => $spamReports
+        ]);
     }
 }

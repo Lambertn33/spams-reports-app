@@ -2,8 +2,8 @@
     <fwb-navbar class="bg-gray-100">
       <template #default="{ isShowMenu }">
         <fwb-navbar-collapse :is-show-menu="isShowMenu">
-          <Link href="/">Users View</Link>
-          <Link href="/">Protectors View</Link>        
+          <Link href="/users/reports">Users View</Link>
+          <Link href="/protectors/reports">Protectors View</Link>        
         </fwb-navbar-collapse>
       </template>
     </fwb-navbar>

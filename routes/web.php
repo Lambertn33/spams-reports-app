@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProtectorsSpamReportsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('app');
-});
+// Route::get('/', function () {
+//     return view('app');
+// });
+Route::resource('protectors/reports', ProtectorsSpamReportsController::class);
